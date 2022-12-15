@@ -8,7 +8,9 @@ public class ProductOfArrayExceptSelf {
 		ProductOfArrayExceptSelf.prods(nums);
 	}
 
-	// 0(n)
+	/*
+	 * time complexity => O(n^2) space complexity => O(n)
+	 */
 
 	private static void prods(int[] nums) {
 		int len = nums.length;
@@ -36,11 +38,12 @@ public class ProductOfArrayExceptSelf {
 		for (int i = 0; i < outArr.length; i++) {
 			System.out.print(outArr[i] + " ");
 		}
-
 	}
 
-	// O(n)
-	private static void prod(int[] nums) {
+	/*
+	 * brute force approach time complexity => O(n^2) space complexity => O(n)
+	 */
+/*	private static void prod(int[] nums) {
 		int[] arr = new int[nums.length];
 
 		for (int i = 0; i < nums.length; i++) {
@@ -61,5 +64,5 @@ public class ProductOfArrayExceptSelf {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}
-	}
+	}*/
 }
