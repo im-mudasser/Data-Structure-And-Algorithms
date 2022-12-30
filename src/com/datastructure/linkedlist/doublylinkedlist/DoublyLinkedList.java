@@ -2,7 +2,6 @@ package com.datastructure.linkedlist.doublylinkedlist;
 
 public class DoublyLinkedList {
 	private DNode head;
-	public DNode tail;
 	int size;
 
 	public void insertAtHead(int val) {
@@ -13,9 +12,6 @@ public class DoublyLinkedList {
 			head.prev = node;
 		}
 		this.head = node;
-		if (this.tail == null) {
-			this.tail = this.head;
-		}
 		size++;
 	}
 
@@ -33,7 +29,6 @@ public class DoublyLinkedList {
 		node.prev = curr;
 		node.next = null;
 		curr.next = node;
-		this.tail = node;
 		size++;
 
 	}

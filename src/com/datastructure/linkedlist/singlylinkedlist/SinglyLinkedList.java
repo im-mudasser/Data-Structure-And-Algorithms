@@ -1,9 +1,9 @@
 package com.datastructure.linkedlist.singlylinkedlist;
 
 public class SinglyLinkedList {
-	private SNode head;
-	private SNode tail;
-	private int size;
+	public SNode head;
+	protected SNode tail;
+	protected int size;
 
 	// inserting operations
 	public void insertAtHead(int val) {
@@ -30,7 +30,6 @@ public class SinglyLinkedList {
 
 	public void insertAtSpecificPosition(int index, int val) {
 		SNode curr = this.head;
-		int count = 0;
 		if (size < index) {
 			System.out.println("this position " + index + " is greater our " + "list size is " + this.size);
 			return;
@@ -42,14 +41,33 @@ public class SinglyLinkedList {
 			insertAtLast(val);
 			return;
 		}
-		while (count != index - 1) {
+		for (int i = 0; i < index - 1; i++) {
 			curr = curr.next;
-			count++;
 		}
 		SNode node = new SNode(val);
 		node.next = curr.next;
 		curr.next = node;
 		size++;
+	}
+
+	// recusive insert
+
+	public void rec(int index, int val) {
+		SNode curr = head;
+		recInsert(index, val, curr);
+
+	}
+
+	public SNode recInsert(int index, int val, SNode curr) {
+		if (index == 0) {
+			SNode newNode = new SNode(val);
+			newNode.next = curr;
+			size++;
+			return newNode;
+		}
+
+		curr.next = recInsert(index - 1, val, curr.next); // return node
+		return curr;
 	}
 
 	// Deleting operations

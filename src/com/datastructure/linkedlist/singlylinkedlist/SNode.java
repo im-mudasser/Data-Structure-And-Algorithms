@@ -1,10 +1,10 @@
 package com.datastructure.linkedlist.singlylinkedlist;
 
 public class SNode {
-	int data;
-	SNode next;
+	public int data;
+	public SNode next;
 
-	SNode(int val) {
+	public SNode(int val) {
 		this.data = val;
 	}
 }
