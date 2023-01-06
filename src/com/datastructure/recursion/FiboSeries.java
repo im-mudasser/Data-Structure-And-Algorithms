@@ -1,15 +1,16 @@
 package com.datastructure.recursion;
 
 public class FiboSeries {
-
+	// 2^n complexity approx
 	public static void main(String[] args) {
 		for (int i = 0; i <= 5; i++) {
-			long ans = fibo(i);
+			int ans = fibo(i);
 			System.out.print(ans + " ");
 		}
+
 	}
 
-	private static long fibo(int n) {
+	private static int fibo(int n) {
 		if (n <= 1) {
 			return n;
 		}

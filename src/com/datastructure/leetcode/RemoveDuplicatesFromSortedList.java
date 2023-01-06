@@ -23,20 +23,39 @@ public class RemoveDuplicatesFromSortedList {
 //		currAddress.next = null;
 //	}
 	// sol#2
+//	public static void rm(SNode head) {
+//		SNode curr = head;
+//		if (curr == null) {
+//			return;
+//		}
+//		while (curr.next != null) {
+//			if (curr.data == curr.next.data) {
+//				curr.next = curr.next.next;
+//
+//			} else {
+//				curr = curr.next;
+//			}
+//
+//		}
+//
+//	}
+
+	// sol 3
 	public static void rm(SNode head) {
-		SNode curr = head;
-		if (curr == null) {
+		SNode p1 = head;
+		SNode p2 = p1.next;
+		if (head == null) {
 			return;
 		}
-		while (curr.next != null) {
-			if (curr.data == curr.next.data) {
-				curr.next = curr.next.next;
-
-			} else {
-				curr = curr.next;
+		while (p2.next != null) {
+			if (p1.data != p2.data) {
+				p1.next = p2;
+				p1 = p2;
 			}
-
+			p2 = p2.next;
 		}
+
+		p1.next = null;
 
 	}
 
